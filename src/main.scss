@@ -1,0 +1,45 @@
+/*
+ Name: Translate app.
+ Description: A devChallenges coding exercise.
+ Author: Federico Borzani
+ GitHub: https://github.com/eserengo/
+*/
+
+$clr-black: hsl(226, 62%, 4%);
+$clr-dark-gray: hsl(219, 17%, 27%);
+$clr-medium-gray: hsl(217, 12%, 34%);
+$clr-light-gray: hsl(215, 23%, 84%);
+$clr-white: hsl(210, 20%, 98%);
+$clr-blue: hsl(225, 76%, 55%);
+$clr-light-blue: hsl(217, 83%, 72%);
+$clr-opaque: rgba(18, 24, 38, 0.75);
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  font-weight: 400;
+}
+
+body {
+  min-width: 200px;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
