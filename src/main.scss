@@ -11,7 +11,6 @@ $clr-medium-gray: hsl(217, 12%, 34%);
 $clr-light-gray: hsl(215, 23%, 84%);
 $clr-white: hsl(210, 20%, 98%);
 $clr-blue: hsl(225, 76%, 55%);
-$clr-light-blue: hsl(217, 83%, 72%);
 $clr-opaque: rgba(18, 24, 38, 0.75);
 
 :root {
@@ -29,17 +28,48 @@ $clr-opaque: rgba(18, 24, 38, 0.75);
 }
 
 body {
-  min-width: 200px;
+  min-width: 375px;
 }
 
-@mixin flex-col {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-
-@mixin flex-row {
+@mixin btn {
+  color: $clr-white;
+  background-color: transparent;
+  padding: 0.5rem 2rem;
+  border: 2px solid $clr-medium-gray;
+  box-shadow: 0px 2px 4px $clr-black;
+  border-radius: 0.75rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  gap: 0.5rem;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: $clr-blue;
+  }
+}
+
+@mixin select {
+  cursor: pointer;
+  background-color: $clr-dark-gray;
+  color: $clr-light-gray;
+  border: 2px solid $clr-medium-gray;
+  border-radius: 0.75rem;
+  box-shadow: 0px 2px 4px $clr-black;
+  padding: 0.6rem 1.2rem;
+}
+
+@mixin icon {
+  background-color: transparent;
+  padding: 0.6rem 0.6rem 0.4rem;
+  border: 2px solid $clr-medium-gray;
+  box-shadow: 0px 2px 4px $clr-black;
+  border-radius: 0.75rem;
+  
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: $clr-dark-gray;
+  }
 }
