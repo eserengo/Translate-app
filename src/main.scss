@@ -13,6 +13,8 @@ $clr-white: hsl(210, 20%, 98%);
 $clr-blue: hsl(225, 76%, 55%);
 $clr-opaque: rgba(18, 24, 38, 0.75);
 
+$shadow: 0px 2px 4px $clr-black;
+
 :root {
   font-family: "DM Sans", sans-serif;
   font-size: 16px;
@@ -32,11 +34,11 @@ body {
 }
 
 @mixin btn {
-  color: $clr-white;
+  color: $clr-light-gray;
   background-color: transparent;
   padding: 0.5rem 2rem;
   border: 2px solid $clr-medium-gray;
-  box-shadow: 0px 2px 4px $clr-black;
+  box-shadow: $shadow;
   border-radius: 0.75rem;
   display: flex;
   flex-flow: row nowrap;
@@ -46,30 +48,53 @@ body {
   &:hover,
   &:focus {
     cursor: pointer;
+    color: $clr-white;
     background-color: $clr-blue;
+    border-color: $clr-blue;
   }
 }
 
-@mixin select {
-  cursor: pointer;
-  background-color: $clr-dark-gray;
-  color: $clr-light-gray;
-  border: 2px solid $clr-medium-gray;
-  border-radius: 0.75rem;
-  box-shadow: 0px 2px 4px $clr-black;
-  padding: 0.6rem 1.2rem;
-}
-
-@mixin icon {
+@mixin ia {
   background-color: transparent;
-  padding: 0.6rem 0.6rem 0.4rem;
+  padding: 0.6rem;
   border: 2px solid $clr-medium-gray;
-  box-shadow: 0px 2px 4px $clr-black;
+  box-shadow: $shadow;
   border-radius: 0.75rem;
+  position: relative;
+
+  .tooltip {
+    visibility: hidden;
+    min-width: 6rem;
+    background-color: $clr-white;
+    color: $clr-black;
+    font-size: 0.625rem;
+    padding-block: 0.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: -75%;
+    left: 0%;
+    z-index: 1;
+  }
+
+  .tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 90%;
+    left: 20%;
+    margin-left: -0.5rem;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: $clr-white transparent transparent transparent;
+  }
   
   &:hover,
   &:focus {
     cursor: pointer;
     background-color: $clr-dark-gray;
+
+    .tooltip {
+      visibility: visible;
+    }
   }
 }
