@@ -1,15 +1,19 @@
 {
   "name": "translate-app",
   "version": "1.0.0",
+  "homepage": "http://eserengo.github.io/Translate-app",
   "private": true,
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b deploy -d build",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "gh-pages": "^6.1.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
